@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="description" content="Sistema de Registro Facial - Dashboard" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Dashboard - Sistema de Registro Facial</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h1>Sistema de Registro Facial</h1>
+        <ul class="nav-links">
+          <li><a href="/" class="active">Dashboard</a></li>
+          <li><a href="/registrar.html">Registrar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container main-content">
+      <h2>Dashboard</h2>
+
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3>Total Registrados</h3>
+          <p id="total-personas" class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Asistencias Hoy</h3>
+          <p class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Personas Activas</h3>
+          <p id="personas-activas" class="stat-number">0</p>
+        </div>
+      </div>
+
+      <div class="personas-lista">
+        <h3>Personas Registradas</h3>
+        <div id="lista-personas" class="grid-personas">
+          <p class="loading">Cargando...</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Sistema de Registro Facial © 2025</p>
+    </footer>
+
+    <script type="module" src="/src/pages/dashboard.js"></script>
+  </body>
+</html>

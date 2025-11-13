@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#2563eb" />
+    <meta
+      name="description"
+      content="Sistema de Registro Facial - Registrar Persona"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Registrar Persona - Sistema de Registro Facial</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h1>Sistema de Registro Facial</h1>
+        <ul class="nav-links">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/registrar.html" class="active">Registrar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container main-content">
+      <h2>Registrar Nueva Persona</h2>
+
+      <div class="registro-container">
+        <div class="camera-section">
+          <video id="webcam" autoplay playsinline></video>
+          <canvas id="canvas" style="display: none"></canvas>
+
+          <div class="camera-controls">
+            <button
+              id="btn-cambiar-camara"
+              class="btn btn-secondary"
+              style="display: none"
+            >
+              Cambiar Cámara
+            </button>
+            <button id="btn-capturar" class="btn btn-primary">
+              Capturar Foto
+            </button>
+            <button
+              id="btn-reiniciar"
+              class="btn btn-secondary"
+              style="display: none"
+            >
+              Tomar Otra
+            </button>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo:</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ej: Juan Pérez"
+              required
+            />
+          </div>
+
+          <div id="preview-section" style="display: none">
+            <h3>Vista Previa:</h3>
+            <img id="foto-preview" alt="Preview" />
+            <div id="deteccion-info" class="info-box"></div>
+          </div>
+
+          <button id="btn-registrar" class="btn btn-success btn-large" disabled>
+            Registrar Persona
+          </button>
+
+          <div id="mensaje" class="mensaje"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Sistema de Registro Facial © 2025</p>
+    </footer>
+
+    <script type="module" src="/src/pages/registrar.js"></script>
+  </body>
+</html>
