@@ -57,11 +57,13 @@ npm run dev
 ## 📝 Configuración Aplicada
 
 ### Supabase
+
 - **URL:** https://jjgcfpueqymjnmrepskc.supabase.co
 - **Bucket:** rostros (público)
 - **Tabla:** personas
 
 ### Campos de la tabla personas:
+
 - `id` - UUID
 - `nombre` - TEXT (único)
 - `foto_url` - TEXT

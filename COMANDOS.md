@@ -3,17 +3,21 @@
 ## 🚀 Iniciar Proyecto
 
 ### Backend
+
 ```bash
 cd backend
 npm run dev
 ```
+
 **URL:** http://localhost:3000
 
 ### Frontend
+
 ```bash
 cd frontend
 npm run dev
 ```
+
 **URL:** http://localhost:3001
 
 ## 🌐 URLs del Sistema
@@ -37,6 +41,7 @@ npm install
 ## 🔧 Configuración Rápida
 
 ### Backend (.env)
+
 ```env
 SUPABASE_URL=https://jjgcfpueqymjnmrepskc.supabase.co
 SUPABASE_ANON_KEY=tu_clave_aqui
@@ -46,9 +51,10 @@ FRONTEND_URL=http://localhost:3001
 ```
 
 ### Frontend (src/lib/supabaseClient.js)
+
 ```javascript
-const SUPABASE_URL = 'https://jjgcfpueqymjnmrepskc.supabase.co';
-const SUPABASE_ANON_KEY = 'tu_clave_aqui';
+const SUPABASE_URL = "https://jjgcfpueqymjnmrepskc.supabase.co";
+const SUPABASE_ANON_KEY = "tu_clave_aqui";
 ```
 
 ## 🛑 Detener Servidores
@@ -63,11 +69,13 @@ taskkill /F /IM node.exe
 ## 📊 Verificar Estado
 
 ### Backend
+
 ```bash
 curl http://localhost:3000
 ```
 
 ### Listar Personas
+
 ```bash
 curl http://localhost:3000/api/personas
 ```
@@ -75,6 +83,7 @@ curl http://localhost:3000/api/personas
 ## 🔄 Reiniciar con Cambios
 
 Los servidores se reinician automáticamente al detectar cambios:
+
 - **Backend:** Nodemon (auto-restart)
 - **Frontend:** Vite (hot-reload)
 

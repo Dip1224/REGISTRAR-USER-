@@ -52,6 +52,7 @@ npm install
 ```
 
 Edita `backend\.env` con tus credenciales:
+
 ```env
 SUPABASE_URL=tu_url_de_supabase
 SUPABASE_ANON_KEY=tu_clave_publica
@@ -61,12 +62,14 @@ PORT=3000
 ### 3. Configurar Frontend
 
 Edita `frontend\src\lib\supabaseClient.js` con tus credenciales:
+
 ```javascript
-const SUPABASE_URL = 'tu_url_de_supabase';
-const SUPABASE_ANON_KEY = 'tu_clave_publica';
+const SUPABASE_URL = "tu_url_de_supabase";
+const SUPABASE_ANON_KEY = "tu_clave_publica";
 ```
 
 Instala dependencias:
+
 ```bash
 cd frontend
 npm install
@@ -75,17 +78,21 @@ npm install
 ## 🎯 Ejecutar el Proyecto
 
 ### Backend (Terminal 1)
+
 ```bash
 cd backend
 npm run dev
 ```
+
 Servidor corriendo en: **http://localhost:3000**
 
 ### Frontend (Terminal 2)
+
 ```bash
 cd frontend
 npm run dev
 ```
+
 Aplicación disponible en: **http://localhost:3001**
 
 ## 📱 Uso
@@ -118,23 +125,25 @@ REGISTRO/
 
 ## 🌐 Endpoints API
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/` | Estado del servidor |
-| POST | `/api/personas/registrar` | Registrar persona |
-| GET | `/api/personas` | Listar personas |
-| GET | `/api/personas/:id` | Obtener persona |
-| PUT | `/api/personas/:id` | Actualizar persona |
-| DELETE | `/api/personas/:id` | Eliminar persona |
+| Método | Endpoint                  | Descripción         |
+| ------ | ------------------------- | ------------------- |
+| GET    | `/`                       | Estado del servidor |
+| POST   | `/api/personas/registrar` | Registrar persona   |
+| GET    | `/api/personas`           | Listar personas     |
+| GET    | `/api/personas/:id`       | Obtener persona     |
+| PUT    | `/api/personas/:id`       | Actualizar persona  |
+| DELETE | `/api/personas/:id`       | Eliminar persona    |
 
 ## 🛠️ Tecnologías
 
 ### Backend
+
 - Node.js + Express
 - Supabase Client
 - UUID para IDs únicos
 
 ### Frontend
+
 - Vite (dev server)
 - Vanilla JavaScript
 - Supabase Client
@@ -160,7 +169,6 @@ REGISTRO/
 ---
 
 **Sistema de Registro Facial © 2025**
-
 
 ```
 REGISTRO/
@@ -317,27 +325,27 @@ El frontend estará disponible en: `http://localhost:5500`
 
 ### Personas
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| POST | `/api/personas/registrar` | Registrar nueva persona |
-| GET | `/api/personas` | Obtener todas las personas |
-| GET | `/api/personas/:id` | Obtener persona por ID |
-| PUT | `/api/personas/:id` | Actualizar persona |
-| DELETE | `/api/personas/:id` | Eliminar persona |
+| Método | Endpoint                  | Descripción                |
+| ------ | ------------------------- | -------------------------- |
+| POST   | `/api/personas/registrar` | Registrar nueva persona    |
+| GET    | `/api/personas`           | Obtener todas las personas |
+| GET    | `/api/personas/:id`       | Obtener persona por ID     |
+| PUT    | `/api/personas/:id`       | Actualizar persona         |
+| DELETE | `/api/personas/:id`       | Eliminar persona           |
 
 ### Ejemplo de Registro
 
 ```javascript
-const response = await fetch('http://localhost:3000/api/personas/registrar', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        nombre: 'Juan Pérez',
-        imagen_base64: 'data:image/jpeg;base64,/9j/4AAQ...',
-        embeddings: null
-    })
+const response = await fetch("http://localhost:3000/api/personas/registrar", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    nombre: "Juan Pérez",
+    imagen_base64: "data:image/jpeg;base64,/9j/4AAQ...",
+    embeddings: null,
+  }),
 });
 
 const data = await response.json();
@@ -360,6 +368,7 @@ console.log(data);
 ### Recomendaciones de Producción
 
 1. **Habilitar RLS personalizado en Supabase**:
+
 ```sql
 -- Ejemplo: Solo permitir INSERT y SELECT
 CREATE POLICY "Permitir inserción" ON personas
@@ -377,20 +386,24 @@ CREATE POLICY "Permitir lectura" ON personas
 ## 🐛 Solución de Problemas
 
 ### Error: "No se pudo acceder a la cámara"
+
 - Verifica que el navegador tenga permisos
 - Usa HTTPS o localhost
 - Revisa la consola del navegador
 
 ### Error: "Error de conexión con Supabase"
+
 - Verifica las credenciales en `.env`
 - Asegúrate de que el proyecto de Supabase esté activo
 - Revisa que la tabla `personas` exista
 
 ### Error: "CORS"
+
 - Verifica que `FRONTEND_URL` esté correctamente configurado en `.env`
 - Asegúrate de que el backend esté corriendo
 
 ### Las imágenes no se cargan
+
 - Verifica que el bucket `rostros` sea público
 - Revisa la configuración de Storage en Supabase
 
